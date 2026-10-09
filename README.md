@@ -139,8 +139,8 @@ casa-3d/
     └── tijolo.jpg
 ```
 
-*Os nomes dos arquivos de textura são exemplos e podem ser alterados conforme os arquivos utilizados.*
 
 ## 👨‍💻 Autor
 
+João Marcos Silva Hess. 
 Projeto desenvolvido como atividade acadêmica da disciplina de **Computação Gráfica**.
