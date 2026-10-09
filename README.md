@@ -32,6 +32,53 @@ As transformações são combinadas por meio da multiplicação de matrizes, for
 
 Para aplicar as texturas, são utilizadas coordenadas UV nos vértices dos objetos, permitindo mapear imagens sobre suas superfícies.
 
+## 🔧 Funções implementadas
+
+### `carregar_textura(caminho)`
+
+Responsável por carregar as imagens que serão utilizadas como texturas dos objetos. A função abre a imagem com a biblioteca Pillow, inverte sua orientação vertical, converte-a para RGBA e envia os dados para a OpenGL. Também configura os parâmetros de filtragem e repetição da textura.
+
+### `matriz_perspectiva(fov, aspecto, perto, longe)`
+
+Cria a matriz de projeção em perspectiva, responsável por representar a profundidade da cena tridimensional. Seus parâmetros definem o campo de visão, a proporção da janela e os limites de distância de visualização.
+
+### `matriz_translacao(x, y, z)`
+
+Cria uma matriz de translação utilizada para posicionar os objetos no espaço tridimensional. Os parâmetros definem o deslocamento nos eixos X, Y e Z.
+
+### `matriz_escala(x, y, z)`
+
+Cria uma matriz de escala para modificar as dimensões dos objetos. Cada parâmetro controla o tamanho nos respectivos eixos, permitindo deixar as peças mais largas, altas ou profundas.
+
+### `matriz_rotacao_x(graus)`
+
+Cria uma matriz de rotação em torno do eixo X, permitindo inclinar os objetos para frente ou para trás. O ângulo de rotação é informado em graus.
+
+### `matriz_rotacao_y(graus)`
+
+Cria uma matriz de rotação em torno do eixo Y, permitindo girar os objetos para os lados e visualizar diferentes ângulos da construção.
+
+### `criar_cubo()`
+
+Define os vértices, as coordenadas de textura e os índices que formam um cubo. Essa geometria é reutilizada para construir o corpo da casa e os elementos adicionais, como a porta, as janelas, a varanda, os degraus e a chaminé.
+
+### `criar_telhado()`
+
+Define os vértices e os índices utilizados para construir a geometria do telhado em formato de pirâmide de base quadrada. As coordenadas de textura permitem mapear uma imagem sobre suas faces.
+
+### `criar_buffers(vertices, indices)`
+
+Cria e configura os buffers da OpenGL responsáveis por armazenar os dados dos vértices e dos índices dos objetos. Também configura os atributos de posição e as coordenadas UV utilizadas no mapeamento das texturas.
+
+### `desenhar_objeto(shader, VAO, quantidade, textura, projecao, view, model, loc_mvp, loc_tex)`
+
+Responsável por desenhar cada objeto na tela. A função combina as matrizes de projeção, visualização e modelo para calcular a matriz MVP, envia essa matriz ao shader, seleciona a textura correspondente e executa o desenho da geometria.
+
+### `main()`
+
+É a função principal do programa. Inicializa o GLFW, cria a janela, configura o shader, prepara as geometrias e carrega as texturas. Em seguida, executa o loop principal, verifica as teclas pressionadas, aplica as rotações e desenha cada parte da casa até que a janela seja fechada.
+
+
 ## 🎨 Texturas
 
 As texturas são carregadas a partir dos caminhos definidos no início do arquivo `casa_3d.py`, permitindo utilizar imagens diferentes para as paredes, o telhado, a porta, as janelas e os elementos decorativos.
