@@ -1,15 +1,99 @@
-# 🏠 Casa 3D com Python e OpenGL
+# Casa 3D com Python e OpenGL
 
-Para criar a casa 3D em Python, utilizei as bibliotecas numpy, GLFW, PyOpenGL e Pillow. O numpy foi utilizado para trabalhar com as matrizes e coordenadas dos objetos, enquanto o GLFW foi responsável pela criação da janela e pelos controles do teclado. Já o PyOpenGL foi utilizado para desenhar os objetos em três dimensões, e o Pillow para carregar as imagens que serão utilizadas como texturas.
+## 📌 Sobre o projeto
 
-Ao pensar na matemática por trás da casa, devemos analisar primeiro suas partes. Temos o corpo principal, o telhado, a porta, as janelas, a varanda, os degraus, as caixas de flores e a chaminé. Cada parte foi criada a partir de objetos geométricos, principalmente cubos e uma pirâmide, posicionados de forma que, juntos, formassem uma única construção.
+Este projeto consiste na criação de uma casa tridimensional utilizando Python e OpenGL, como parte da atividade de Computação Gráfica. A construção é formada por diferentes objetos geométricos que, juntos, representam as partes de uma casa.
 
-A parte principal da matemática fica nas funções responsáveis pelas matrizes de translação, rotação e escala. A escala é utilizada para modificar o tamanho das peças, a rotação altera sua direção e a translação define sua posição no espaço. Dessa forma, foi possível deixar o corpo da casa mais largo, criar um telhado maior que as paredes e posicionar os demais elementos em seus respectivos lugares.
+O objetivo é aplicar conceitos de **transformações geométricas, projeção 3D, texturização e interação com o teclado**.
 
-Para o telhado, foi utilizada uma pirâmide com base quadrada, enquanto o corpo da casa e os elementos decorativos foram construídos com cubos. A porta e as janelas foram posicionadas na parte frontal, e a varanda recebeu degraus para deixar a construção mais detalhada. Também foram adicionadas caixas de flores e uma chaminé, dando à casa uma aparência própria.
+## ✨ Funcionalidades
 
-As transformações são combinadas por meio da multiplicação das matrizes, formando a transformação final de cada objeto. Além disso, foi utilizada uma matriz de perspectiva para dar profundidade à cena e o teste de profundidade da OpenGL para controlar quais partes ficam visíveis durante a renderização.
+* Construção de uma casa em 3D.
+* Utilização de cubos e pirâmide para formar a estrutura.
+* Aplicação de transformações geométricas: translação, rotação e escala.
+* Suporte à aplicação de texturas nas superfícies dos objetos.
+* Projeção em perspectiva para visualizar a profundidade.
+* Rotação da casa pelos eixos X e Y utilizando as setas do teclado.
+* Elementos decorativos, como porta, janelas, varanda, degraus, caixas de flores e chaminé.
 
-Para as texturas, foram preparadas coordenadas UV nos vértices de cada objeto. Essas coordenadas permitem mapear as imagens sobre as superfícies da casa, possibilitando utilizar texturas diferentes para as paredes, o telhado, a porta, as janelas e os elementos de madeira. Os caminhos das imagens ficam definidos no início do código, facilitando sua substituição.
+## 🛠️ Tecnologias utilizadas
 
-Por fim, foram implementados controles pelas setas do teclado, permitindo girar a casa nos eixos X e Y e visualizar diferentes ângulos da construção. Tudo foi organizado na função main para inicializar a janela, carregar as texturas, configurar os objetos e executar a renderização continuamente.
+* **Python:** linguagem utilizada no desenvolvimento.
+* **NumPy:** manipulação de matrizes e coordenadas.
+* **GLFW:** criação da janela e captura das entradas do teclado.
+* **PyOpenGL:** renderização dos objetos tridimensionais.
+* **Pillow:** carregamento das imagens utilizadas como texturas.
+
+## 📐 Conceitos de Computação Gráfica
+
+Para construir a casa, foram utilizadas matrizes de **translação, rotação e escala**. A escala modifica o tamanho dos objetos, a rotação altera sua orientação e a translação define suas posições no espaço.
+
+As transformações são combinadas por meio da multiplicação de matrizes, formando a transformação final de cada objeto. Também são utilizadas projeção em perspectiva e teste de profundidade para representar corretamente a cena tridimensional.
+
+Para aplicar as texturas, são utilizadas coordenadas UV nos vértices dos objetos, permitindo mapear imagens sobre suas superfícies.
+
+## 🎨 Texturas
+
+As texturas são carregadas a partir dos caminhos definidos no início do arquivo `casa_3d.py`, permitindo utilizar imagens diferentes para as paredes, o telhado, a porta, as janelas e os elementos decorativos.
+
+Os caminhos podem ser configurados de acordo com a organização dos arquivos do projeto.
+
+## ⚙️ Instalação
+
+Certifique-se de ter o Python instalado. Em seguida, instale as dependências necessárias executando:
+
+```bash
+python -m pip install numpy glfw PyOpenGL Pillow
+```
+
+## ▶️ Como executar
+
+1. Clone o repositório:
+
+   ```bash
+   git clone URL_DO_REPOSITORIO
+   ```
+
+2. Entre na pasta do projeto:
+
+   ```bash
+   cd NOME_DO_REPOSITORIO
+   ```
+
+3. Configure os caminhos das texturas no arquivo `casa_3d.py`.
+
+4. Execute o programa:
+
+   ```bash
+   python casa_3d.py
+   ```
+
+## 🎮 Controles
+
+| Tecla | Ação                 |
+| ----- | -------------------- |
+| `↑`   | Rotacionar no eixo X |
+| `↓`   | Rotacionar no eixo X |
+| `←`   | Rotacionar no eixo Y |
+| `→`   | Rotacionar no eixo Y |
+
+## 📂 Estrutura do projeto
+
+```text
+casa-3d/
+├── casa_3d.py
+├── README.md
+└── texturas/
+    ├── parede.jpg
+    ├── telhado.jpg
+    ├── porta.jpg
+    ├── janela.jpg
+    ├── madeira.jpg
+    └── tijolo.jpg
+```
+
+*Os nomes dos arquivos de textura são exemplos e podem ser alterados conforme os arquivos utilizados.*
+
+## 👨‍💻 Autor
+
+Projeto desenvolvido como atividade acadêmica da disciplina de **Computação Gráfica**.
